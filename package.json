@@ -1,0 +1,19 @@
+{
+  "name": "projeto-modulo-4-restaurante",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/model/ingredientes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LagAntunes/Projeto-de-concluso-do--modulo-4-Restaurante-API.git"
+  },
+  "author": "Luis Antonio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LagAntunes/Projeto-de-concluso-do--modulo-4-Restaurante-API/issues"
+  },
+  "homepage": "https://github.com/LagAntunes/Projeto-de-concluso-do--modulo-4-Restaurante-API#readme"
+}
