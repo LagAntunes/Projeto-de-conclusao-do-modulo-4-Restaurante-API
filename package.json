@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/LagAntunes/Projeto-de-concluso-do--modulo-4-Restaurante-API/issues"
   },
-  "homepage": "https://github.com/LagAntunes/Projeto-de-concluso-do--modulo-4-Restaurante-API#readme"
+  "homepage": "https://github.com/LagAntunes/Projeto-de-concluso-do--modulo-4-Restaurante-API#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
