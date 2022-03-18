@@ -6,35 +6,48 @@ export async function createTable() {
     })
 }
 
-export async function insertIngrediente(ingrediente) {
+export async function selectIngrediente(req, res) {
+    openDb().then(db => {
+         db.all('SELECT * FROM Ingredientes')
+        .then(ingredientes => res.json(ingredientes))
+    })
+}
+
+export async function selectUnicoIngrediente(req, res) {
+    let id = req.body.id;
+    openDb().then(db => {
+         db.get('SELECT * FROM Ingredientes WHERE id=?', [id])
+        .then(ingredienteUnico => res.json(ingredienteUnico));
+    })
+}
+
+export async function insertIngrediente(req, res) {
+    let ingrediente = req.body;
     openDb().then(db => {
         db.run('INSERT INTO Ingredientes (nome, tipo, valorKG) VALUES (?, ?, ?)', [ingrediente.nome, ingrediente.tipo, ingrediente.valorKG])
     })
+    res.json({
+        "statusCode": 200
+    })
 }
 
-export async function updateIngrediente(ingrediente) {
+export async function updateIngrediente(req, res) {
+    let ingrediente = req.body;
     openDb().then(db => {
         db.run('UPDATE Ingredientes SET nome=?, tipo=?, valorKG=? WHERE id=?', [ingrediente.nome, ingrediente.tipo, ingrediente.valorKG, ingrediente.id])
     })
-}
-
-export async function selectIngrediente() {
-    openDb().then(db => {
-        return db.all('SELECT * FROM ingrediente')
-        .then(res => res)
+    res.json({
+        "statusCode": 200
     })
 }
 
-export async function selectUnicoIngrediente(id) {
+export async function deleteIngrediente(req, res) {
+    let id = req.body.id;
     openDb().then(db => {
-        return db.get('SELECT * FROM ingrediente WHERE id=?', [id])
+         db.get('DELETE FROM Ingredientes WHERE id=?', [id])
         .then(res => res)
     })
-}
-
-export async function deleteIngrediente(id) {
-    openDb().then(db => {
-        return db.get('DELETE FROM ingrediente WHERE id=?', [id])
-        .then(res => res)
+    res.json({
+        "statusCode": 200
     })
 }
