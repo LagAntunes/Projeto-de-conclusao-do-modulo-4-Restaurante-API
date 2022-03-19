@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/ingredientes', selectIngrediente);
-router.get('/ingredienteUnico', selectUnicoIngrediente);
+router.get('/ingredienteUnico/:id', selectUnicoIngrediente);
 router.post('/ingredientes', insertIngrediente);
 router.put('/ingredientes', updateIngrediente);
 router.delete('/ingredientes', deleteIngrediente);
