@@ -6,7 +6,7 @@ export async function selectIngrediente(req, res) {
     })
     .catch((e) => {
         res.status(400).json(e);
-    })
+    });
 }
 
 export async function selectUnicoIngrediente(req, res) {
