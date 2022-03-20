@@ -1,54 +1,61 @@
-import { openDb } from '../model/configDB.js';
-
-export async function createTable() {
-    await openDb().then(db => {
-        db.exec('CREATE TABLE IF NOT EXISTS Ingredientes (id INTEGER PRIMARY KEY, nome VARCHAR(50), tipo VARCHAR(50), valorKG DECIMAL(10,2) )')
-    })
-}
-createTable()
+import { metodoSelectIngrediente, metodoSelectUnicoIngrediente, metodoInsertIngrediente, metodoUpdateIngrediente, metodoDeleteIngrediente } from '../DAO/metodos-ingredientes.js';
 
 export async function selectIngrediente(req, res) {
-    await openDb().then(db => {
-         db.all('SELECT * FROM Ingredientes')
-        .then(ingredientes => res.json(ingredientes))
+    metodoSelectIngrediente().then((resposta) => {
+        res.status(201).json(resposta);
+    })
+    .catch((e) => {
+        res.status(400).json(e);
     })
 }
 
 export async function selectUnicoIngrediente(req, res) {
-    let id = req.params.id;
-    await openDb().then(db => {
-         db.get('SELECT * FROM Ingredientes WHERE id=?', [id])
-        .then(ingredienteUnico => res.json(ingredienteUnico));
-    })
+    try {
+        let id = req.params.id;
+        let response = await metodoSelectUnicoIngrediente(id);
+        res.status(200).json(response);
+    }
+    catch(erro) {
+        res.status(400).json(erro.message);
+    }
 }
 
 export async function insertIngrediente(req, res) {
-    let ingrediente = req.body;
-    await openDb().then(db => {
-        db.run('INSERT INTO Ingredientes (nome, tipo, valorKG) VALUES (?, ?, ?)', [ingrediente.nome, ingrediente.tipo, ingrediente.valorKG])
-    })
-    res.json({
-        "statusCode": 200
-    })
+    try {
+        let ingrediente = [
+            req.body.id,
+            req.body.nome,
+            req.body.tipo,
+            req.body.valorKG,
+            req.body.antigoValorKG
+        ];
+
+        let response = await metodoInsertIngrediente(...ingrediente);
+        res.status(201).json(response);
+    }
+    catch(erro) {
+        res.status(400).json(erro.message);
+    }
 }
 
 export async function updateIngrediente(req, res) {
-    let ingrediente = req.body;
-    await openDb().then(db => {
-        db.run('UPDATE Ingredientes SET nome=?, tipo=?, valorKG=? WHERE id=?', [ingrediente.nome, ingrediente.tipo, ingrediente.valorKG, ingrediente.id])
-    })
-    res.json({
-        "statusCode": 200
-    })
+    try {
+        let ingrediente = Object.values(req.body);
+        let response = metodoUpdateIngrediente(req.params.id, ...ingrediente);
+        res.status(200).json(response);
+    }
+    catch(erro) {
+        res.status(400).json(erro.message);
+    }
 }
 
 export async function deleteIngrediente(req, res) {
-    let id = req.body.id;
-    await openDb().then(db => {
-         db.get('DELETE FROM Ingredientes WHERE id=?', [id])
-        .then(res => res)
-    })
-    res.json({
-        "statusCode": 200
-    })
+    try {
+        let id = req.params.id;
+        let response = await metodoDeleteIngrediente(id);
+        res.status(200).json(response);
+    }
+    catch(erro) {
+        res.status(400).json(erro.message);
+    }
 }
