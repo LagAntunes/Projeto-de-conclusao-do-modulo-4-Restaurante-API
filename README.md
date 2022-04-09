@@ -58,49 +58,45 @@
       <img src="https://user-images.githubusercontent.com/93675800/159192071-1810483e-45d1-4915-8b0d-c94eed4836db.jpg">
     </div>
   </li>
-  <li><h4>Instale as dependências especificadas no próximo tópico.</h4></li>
   <li>
-    <h4>Inicialize o projeto com o seguinte comando no terminal:</h4>
+    <h4>Instale as dependências especificadas no próximo tópico com o seguinte comando:</h4>
     <blockquote>
-      npm run dev
+      npm install
     </blockquote>
   </li>
 </ul>
 
-<h2>Dependências necessárias ao projeto:</h2>
+<h2>Dependências do projeto:</h2>
 <blockquote>
    "dependencies": {<br>
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"express": "^4.17.3",<br>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"nodemon": "^2.0.15",<br>
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sqlite": "^4.0.25",<br>
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sqlite3": "^5.0.2"<br>
   }
 </blockquote>
-<h3>A documentação para a instalação das dependências estão abaixo:</h3>
+
+<blockquote>
+   "devDependencies": {<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"nodemon": "^2.0.15"<br>
+  }
+</blockquote>
+<h3>A documentação das dependências que estão no projeto:</h3>
 <ul>
   <li>
     Documentação do <a href="https://www.npmjs.com/package/express">Express</a>
-    <h5>Digite o comando abaixo no terminal do VS Code para instalar o Express:</h5>
-    <blockquote>
-      npm install express
-    </blockquote>
-  </li>
-  <li>
-    Documentação do <a href="https://www.npmjs.com/package/nodemon">Nodemon</a>
-    <h5>Digite o comando abaixo no terminal do VS Code para instalar o Nodemon:</h5>
-    <blockquote>
-      npm install -g nodemon
-    </blockquote>
   </li>
   <li>
     Documentação do <a href="https://www.npmjs.com/package/sqlite">Sqlite e Sqlite3</a>
-    <h5>Digite os comandos abaixo no terminal do VS Code para instalar o Sqlite e Sqlite3:</h5>
-    <blockquote>
-      npm install sqlite --save<br>
-      npm install sqlite3 --save
-    </blockquote>
+  </li>
+  <li>
+    Documentação do <a href="https://www.npmjs.com/package/nodemon">Nodemon</a>
   </li>
 </ul>
+
+<h2>Inicialize o projeto com o seguinte comando no terminal:</h2>
+    <blockquote>
+      npm run dev
+    </blockquote>
 
 <h2>Rotas da API:</h2>
 <p>Nesse projeto utilizamos somentes as rotas: <strong>/ingredientes</strong> e <strong>/ingredientes/:id</strong>, mas é possível realizar todos as operações do CRUD com elas. </p>
