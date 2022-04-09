@@ -43,12 +43,6 @@
 <h2>Como executar o projeto:</h2>
 <ul>
   <li>
-    <h4>Faça um clone desse projeto com o seguinte comando em seu terminal:</h4>
-    <blockquote>
-      git clone <a textDecoration="none">https://github.com/LagAntunes/Projeto-de-conclusao-do-modulo-4-Restaurante-API.git</a>
-    </blockquote>
-  </li>
-  <li>
     <h4>Verifique a instalação do NPM (um gerenciador de pacotes para o Node.JS que geralmente já vem instalado junto com o Node.js) em seu computador com o seguinte comando em seu terminal:</h4>
     <blockquote>
       npm --version
@@ -57,6 +51,18 @@
     <div align="center">
       <img src="https://user-images.githubusercontent.com/93675800/159192071-1810483e-45d1-4915-8b0d-c94eed4836db.jpg">
     </div>
+  </li>
+  <li>
+    <h4>Faça um clone desse projeto com o seguinte comando em seu terminal:</h4>
+    <blockquote>
+      git clone <a textDecoration="none">https://github.com/LagAntunes/Projeto-de-conclusao-do-modulo-4-Restaurante-API.git</a>
+    </blockquote>
+  </li>
+  <li>
+    <h4>Entre na pasta desse projeto com o seguinte comando em seu terminal:</h4>
+    <blockquote>
+      cd Projeto-de-conclusao-do-modulo-4-Restaurante-API
+    </blockquote>
   </li>
   <li>
     <h4>Instale as dependências especificadas no próximo tópico com o seguinte comando:</h4>
