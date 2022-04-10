@@ -86,7 +86,7 @@
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"nodemon": "^2.0.15"<br>
   }
 </blockquote>
-<h3>A documentação das dependências que estão no projeto:</h3>
+<h3>Documentação das dependências que estão no projeto:</h3>
 <ul>
   <li>
     Documentação do <a href="https://www.npmjs.com/package/express">Express</a>
@@ -101,7 +101,7 @@
 
 <h2>Inicialize o projeto com o seguinte comando no terminal:</h2>
     <blockquote>
-      npm run dev
+      npm start
     </blockquote>
 
 <h2>Rotas da API:</h2>
